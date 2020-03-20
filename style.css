@@ -89,7 +89,7 @@ img:hover {
     color:#f3f3f3;
 }
 
-.lightSquare:hover, .darkSquare:hover {
+.square:hover {
     opacity: 0.8;
 }
 

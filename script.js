@@ -3,6 +3,7 @@ const stats = document.getElementById("stats");
 const strt = document.getElementById("start");
 const rst = document.getElementById("reset");
 const scoreDisplay = document.getElementById("score-display");
+let board = document.getElementsByClassName('board')[0];
 
 var score = 0;
 var tries = 0;
@@ -69,6 +70,7 @@ function reset() {
     target.innerHTML = '';
     strt.style.visibility = "visible";
     rst.style.visibility = 'hidden';
+    // board.style.pointerEvents = 'none'; //THIS ACHIEVES NO POINTER EVENTS ON GAME FINISH
 }
 
 //3-2-1 COUNTDOWN
