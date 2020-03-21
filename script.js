@@ -3,6 +3,7 @@ const stats = document.getElementById("stats");
 const strt = document.getElementById("start");
 const rst = document.getElementById("reset");
 const scoreDisplay = document.getElementById("score-display");
+const scoreOutput = document.getElementById("score-output");
 let board = document.getElementsByClassName('board')[0];
 
 var score = 0;
@@ -68,14 +69,18 @@ function startGame() {
             if(item.id == randomSquare) {
                 score++
                 tries++
-                scoreDisplay.innerHTML = score;
+                scoreOutput.innerHTML = score;
                 randomSquare = rndSq(squareset);
                 target.innerHTML = randomSquare;
+                scoreOutput.classList.add('correct');
+                scoreOutput.classList.remove('incorrect');
             } else {
                 tries++;
                 // scoreDisplay.innerHTML = score;
                 randomSquare = rndSq(squareset);
                 target.innerHTML = randomSquare;
+                scoreOutput.classList.remove('correct');
+                scoreOutput.classList.add('incorrect');
             };
         })
     })
@@ -90,6 +95,9 @@ function reset() {
     rst.style.visibility = 'hidden';
     //To make board unresponsive on game finish
     board.style.pointerEvents = 'none'; 
+    scoreOutput.classList.remove('incorrect');
+    scoreOutput.classList.remove('correct');
+    scoreOutput.innerHTML = '';
 }
 
 //End Game

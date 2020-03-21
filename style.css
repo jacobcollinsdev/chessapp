@@ -139,6 +139,16 @@ input:hover {
     left:74%;
 }
 
+#score-output {
+    font-size:5em;
+    width:100px;
+    position:absolute;
+    border-radius: 50%;
+    text-align: center;
+    align-self:center;
+    left:83%;
+}
+
 #stats {
     /* border: 1px solid black; */
     width:50%;
@@ -159,6 +169,16 @@ input:hover {
     pointer-events: none;
 }
 
+.correct {
+    background:green;
+    border-radius: 50%;
+}
+
+.incorrect {
+    background-color: red;
+    border-radius: 50%;
+}
+
 /* on screens that are 1000px or less, do this... */
 @media screen and (max-width:1000px) {
     .content {
@@ -174,6 +194,11 @@ input:hover {
         margin:auto;
     }
 
+    #score-output {
+        display:block;
+        position:static;
+        margin:auto;
+    }
     #start {
         padding-bottom:20px;
         margin:auto;
