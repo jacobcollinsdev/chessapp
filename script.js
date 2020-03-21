@@ -36,8 +36,26 @@ function gameTime() {
     }, gametime * 1000);
 }
 
-//Square Click Events
+//3-2-1 COUNTDOWN
+
+var count = 3;
+var timer;
+
+function startTimer(count){
+    scoreDisplay.innerHTML ='';
+    if(count === 0) {
+        startGame();
+        rst.style.visibility = "visible";    
+    } else {
+        target.innerText = count;
+        setTimeout(function() {startTimer(--count);}, 1000);
+    }
+}
+
 function startGame() {
+    
+    //To make the board active
+    board.style.pointerEvents = 'all';
 
     //First Target
     target.innerHTML = randomSquare;
@@ -70,25 +88,11 @@ function reset() {
     target.innerHTML = '';
     strt.style.visibility = "visible";
     rst.style.visibility = 'hidden';
-    // board.style.pointerEvents = 'none'; //THIS ACHIEVES NO POINTER EVENTS ON GAME FINISH
+    //To make board unresponsive on game finish
+    board.style.pointerEvents = 'none'; 
 }
 
-//3-2-1 COUNTDOWN
-
-var count = 3;
-var timer;
-
-function startTimer(count){
-    scoreDisplay.innerHTML ='';
-    if(count === 0) {
-        startGame();
-        rst.style.visibility = "visible";    
-    } else {
-        target.innerText = count;
-        setTimeout(function() {startTimer(--count);}, 1000);
-    }
-}
-
+//End Game
 function end() {
     scoreDisplay.innerHTML = "Time's Up! You scored " + score + " points!"
     reset();
