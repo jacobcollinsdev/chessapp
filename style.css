@@ -170,14 +170,15 @@ input:hover {
 }
 
 .correct {
-    background:green;
+    border:6px solid green;
     border-radius: 50%;
 }
 
 .incorrect {
-    background-color: red;
+    border:6px solid red;
     border-radius: 50%;
 }
+
 
 /* on screens that are 1000px or less, do this... */
 @media screen and (max-width:1000px) {
