@@ -25,14 +25,11 @@ function rndSq(set) {
 //INITIAL RANDOM COORDINATE FOR GAME START
 let randomSquare = rndSq(squareset);
 
-//Game length in seconds
-let gametime = 10;
-//Game timer
-let gametimer;
+let gametime = 10; //Game length in seconds
+let gametimer; //Game timer
 
 function gameTime() {
     gametimer = setTimeout(function() {
-        //end game when time runs out
         end();
     }, gametime * 1000);
 }
@@ -53,38 +50,41 @@ function startTimer(count){
     }
 }
 
+
+
+
+document.querySelectorAll('.square').forEach(item => {
+    item.addEventListener('click', onClick);
+})
+
 function startGame() {
     
-    //To make the board active
-    board.style.pointerEvents = 'all';
-
-    //First Target
-    target.innerHTML = randomSquare;
-
-    //Start Game timer
-    gameTime()
-
-    document.querySelectorAll('.square').forEach(item => {
-        item.addEventListener('click', event => {
-            if(item.id == randomSquare) {
-                score++
-                tries++
-                scoreOutput.innerHTML = score;
-                randomSquare = rndSq(squareset);
-                target.innerHTML = randomSquare;
-                scoreOutput.classList.add('correct');
-                scoreOutput.classList.remove('incorrect');
-            } else {
-                tries++;
-                // scoreDisplay.innerHTML = score;
-                randomSquare = rndSq(squareset);
-                target.innerHTML = randomSquare;
-                scoreOutput.classList.remove('correct');
-                scoreOutput.classList.add('incorrect');
-            };
-        })
-    })
+    board.style.pointerEvents = 'all'; //To make the board active
+    target.innerHTML = randomSquare; //First Target
+    gameTime() //Start Game timer
 };
+
+function onClick(event) {
+    const item = event.target;
+    if(item.id == randomSquare) {
+        score++
+        tries++
+        scoreOutput.innerHTML = score;
+        randomSquare = rndSq(squareset);
+        target.innerHTML = randomSquare;
+        scoreOutput.classList.add('correct');
+        scoreOutput.classList.remove('incorrect');
+    } else {
+        tries++;
+        scoreOutput.innerHTML = score;
+        randomSquare = rndSq(squareset);
+        target.innerHTML = randomSquare;
+        scoreOutput.classList.remove('correct');
+        scoreOutput.classList.add('incorrect');
+    };
+}
+
+
 
 //Reset Game
 function reset() {
@@ -93,8 +93,7 @@ function reset() {
     target.innerHTML = '';
     strt.style.visibility = "visible";
     rst.style.visibility = 'hidden';
-    //To make board unresponsive on game finish
-    board.style.pointerEvents = 'none'; 
+    board.style.pointerEvents = 'none'; //To make board unresponsive on game finish
     scoreOutput.classList.remove('incorrect');
     scoreOutput.classList.remove('correct');
     scoreOutput.innerHTML = '';
