@@ -53,6 +53,7 @@ function startTimer(count){
 
 
 
+
 document.querySelectorAll('.square').forEach(item => {
     item.addEventListener('click', onClick);
 })
