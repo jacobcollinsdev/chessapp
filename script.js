@@ -1,7 +1,7 @@
 const target = document.getElementById("target");
 const stats = document.getElementById("stats");
 const strt = document.getElementById("start");
-const rst = document.getElementById("reset");
+const cntdwn = document.getElementById("countdown");
 const scoreDisplay = document.getElementById("score-display");
 const scoreOutput = document.getElementById("score-output");
 let board = document.getElementsByClassName('board')[0];
@@ -93,7 +93,7 @@ function reset() {
     score=0;
     target.innerHTML = '';
     strt.style.visibility = "visible";
-    rst.style.visibility = 'hidden';
+    cntdwn.style.visibility = 'hidden';
     board.style.pointerEvents = 'none'; //To make board unresponsive on game finish
     scoreOutput.classList.remove('incorrect');
     scoreOutput.classList.remove('correct');
@@ -113,6 +113,6 @@ document.getElementsByTagName("img")[0].addEventListener("click", ()=> {
 });
 
 //Reset Game Button
-rst.addEventListener('click', event => {
-    reset();
-});
+// rst.addEventListener('click', event => {
+//     reset();
+// });
