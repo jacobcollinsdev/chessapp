@@ -8,6 +8,7 @@ body {
 
 .content {
     display:flex;
+    justify-content: center;
 }
 
 .board {
@@ -100,9 +101,10 @@ p {
 }
 
 #countdown {
-    display:block;
     text-align: center;
-    margin-top: 40px;
+    display:block;
+    font-size: 3em;
+    margin-top: 10px;
     visibility: hidden;
 }
 
