@@ -24,15 +24,7 @@ body {
     font-family: "Dosis", Arial, sans-serif;
     font-weight: bold;
     position: relative;
-    pointer-events: none ;
-}
-
-button {
-    margin:auto;
-    display:block;
-    height:200px;
-    width:200px;
-    border-radius: 50%;
+    pointer-events: none;
 }
 
 .center {
@@ -41,15 +33,11 @@ button {
     justify-content: center;
 }
 
-.fileA {
-    text-align: right;
-    margin-top: 19px;;
-    color:#f3f3f3;
-}
 
 .file {
     text-align: right;
-    margin-top: 45px;;
+    font-size: 1.2em;
+    align-self: flex-end;
 }
 
 nav {
@@ -128,7 +116,6 @@ input:hover {
 }
 
 #settings {
-    padding-left:15px;
     font-size: 1.5em;
 }
 
@@ -138,6 +125,7 @@ form {
 
 #difficulty {
     text-align: center;
+    font-size: 1.5em;
 }
 
 #score-display {
@@ -146,8 +134,9 @@ form {
     text-align:center;
     position: absolute;
     width:24%;
-    top:25%;
-    left:74%;
+    top:50%;
+    left:85%;
+    transform: translate(-50%, -50%);
 }
 
 #score-output {
@@ -157,15 +146,18 @@ form {
     border-radius: 50%;
     text-align: center;
     align-items:center;
-    left:83%;
-    top:40%;
+    left:85%;
+    top:50%;
+    transform: translate(-50%, -50%);
 }
 
 #stats {
     /* border: 1px solid black; */
     position:relative;
-    margin: 40px;
+    margin-left: 40px;
+    margin-right: 40px;
     text-align: justify;
+    align-self: center;
 }
 
 #target {
