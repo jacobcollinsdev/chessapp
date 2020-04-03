@@ -7,16 +7,17 @@ body {
 }
 
 .content {
-    display:flex;
-    justify-content: center;
+    display:grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
 }
 
 .board {
     /* border: 1px solid black; */
-    width:100%;
     display:grid;
-    justify-content: center;
-    align-content: center;
+    justify-items: center;
+    align-items: center;
     grid-template-columns: repeat(8, 80px);
     grid-template-rows: repeat(8, 80px);
     font-size:20px;
@@ -68,7 +69,6 @@ h2 {
 
 img {
     height:300px;
-    margin-top: 50%;
 }
 
 img:hover {
@@ -104,7 +104,6 @@ p {
     text-align: center;
     display:block;
     font-size: 3em;
-    margin-top: 10px;
     visibility: hidden;
 }
 
@@ -124,15 +123,21 @@ input:hover {
 
 #start {
     /* border: 1px solid black; */
-    width:50%;
-    text-align: center;
-    padding-top: 30px;
-    padding-left: 20px;;
-
+    justify-self: center;
+    align-self: center;
 }
 
 #settings {
     padding-left:15px;
+    font-size: 1.5em;
+}
+
+form {
+    text-align: center;
+}
+
+#difficulty {
+    text-align: center;
 }
 
 #score-display {
@@ -151,15 +156,15 @@ input:hover {
     position:absolute;
     border-radius: 50%;
     text-align: center;
-    align-self:center;
+    align-items:center;
     left:83%;
+    top:40%;
 }
 
 #stats {
     /* border: 1px solid black; */
-    width:50%;
     position:relative;
-    margin-right: 20px;
+    margin: 40px;
     text-align: justify;
 }
 
