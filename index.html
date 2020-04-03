@@ -23,10 +23,9 @@
 
 
         <div class="board">
-            <!--CONTAINER DIV FOR ranNum OUTPUT TO BE INSERTED-->
             <div id="target"></div>
             <!--RANK 8-->
-            <div class="square lightSquare" id="a8">8</div>
+            <div class="square lightSquare" id="a8"><div class="rank">8</div></div>
             <div class="square darkSquare" id="b8"></div>
             <div class="square lightSquare" id="c8"></div>
             <div class="square darkSquare" id="d8"></div>
@@ -35,8 +34,8 @@
             <div class="square lightSquare" id="g8"></div>
             <div class="square darkSquare" id="h8"></div>
             <!--RANK 7-->
-            <div class="square darkSquare" id="a7">7</div>
-            <div class="square lightSquare" id="b7"></div>
+            <div class="square darkSquare" id="a7"><div class="rank">7</div></div>
+            <div class="square lightSquare" id="b7"></div >
             <div class="square darkSquare" id="c7"></div>
             <div class="square lightSquare" id="d7"></div>
             <div class="square darkSquare" id="e7"></div>
@@ -44,7 +43,7 @@
             <div class="square darkSquare" id="g7"></div>
             <div class="square lightSquare" id="h7"></div>
             <!--RANK 6-->
-            <div class="square lightSquare" id="a6">6</div>
+            <div class="square lightSquare" id="a6"><div class="rank">6</div></div>
             <div class="square darkSquare" id="b6"></div>
             <div class="square lightSquare" id="c6"></div>
             <div class="square darkSquare" id="d6"></div>
@@ -53,7 +52,7 @@
             <div class="square lightSquare" id="g6"></div>
             <div class="square darkSquare" id="h6"></div>
             <!--RANK 5-->
-            <div class="square darkSquare" id="a5">5</div>
+            <div class="square darkSquare" id="a5"><div class="rank">5</div></div>
             <div class="square lightSquare" id="b5"></div>
             <div class="square darkSquare" id="c5"></div>
             <div class="square lightSquare" id="d5"></div>
@@ -62,7 +61,7 @@
             <div class="square darkSquare" id="g5"></div>
             <div class="square lightSquare" id="h5"></div>
             <!--RANK 4-->
-            <div class="square lightSquare" id="a4">4</div>
+            <div class="square lightSquare" id="a4"><div class="rank">4</div></div>
             <div class="square darkSquare" id="b4"></div>
             <div class="square lightSquare" id="c4"></div>
             <div class="square darkSquare" id="d4"></div>
@@ -71,7 +70,7 @@
             <div class="square lightSquare" id="g4"></div>
             <div class="square darkSquare" id="h4"></div>
             <!--RANK 3-->
-            <div class="square darkSquare" id="a3">3</div>
+            <div class="square darkSquare" id="a3"><div class="rank">3</div></div>
             <div class="square lightSquare" id="b3"></div>
             <div class="square darkSquare" id="c3"></div>
             <div class="square lightSquare" id="d3"></div>
@@ -80,7 +79,7 @@
             <div class="square darkSquare" id="g3"></div>
             <div class="square lightSquare" id="h3"></div>
             <!--RANK 2-->
-            <div class="square lightSquare" id="a2">2</div>
+            <div class="square lightSquare" id="a2"><div class="rank">2</div></div>
             <div class="square darkSquare" id="b2"></div>
             <div class="square lightSquare" id="c2"></div>
             <div class="square darkSquare" id="d2"></div>
@@ -89,14 +88,14 @@
             <div class="square lightSquare" id="g2"></div>
             <div class="square darkSquare" id="h2"></div>
             <!--RANK 1-->
-            <div class="square darkSquare" id="a1">1 <p class="fileA">a</p></div>
-            <div class="square lightSquare" id="b1"><p class="file">b</p></div>
-            <div class="square darkSquare" id="c1"><p class="file">c</p></div>
-            <div class="square lightSquare" id="d1"><p class="file">d</p></div>
-            <div class="square darkSquare" id="e1"><p class="file">e</p></div>
-            <div class="square lightSquare" id="f1"><p class="file">f</p></div>
-            <div class="square darkSquare" id="g1"><p class="file">g</p></div>
-            <div class="square lightSquare" id="h1"><p class="file">h</p></div>
+            <div class="square darkSquare" id="a1"><div class="rank">1</div><div class="file">a</div></div>
+            <div class="square lightSquare" id="b1"><div class="file">b</div></div>
+            <div class="square darkSquare" id="c1"><div class="file">c</div></div>
+            <div class="square lightSquare" id="d1"><div class="file">d</div></div>
+            <div class="square darkSquare" id="e1"><div class="file">e</div></div>
+            <div class="square lightSquare" id="f1"><div class="file">f</div></div>
+            <div class="square darkSquare" id="g1"><div class="file">g</div></div>
+            <div class="square lightSquare" id="h1"><div class="file">h</div></div>
         </div>
 
         <div id="score-display"></div>
@@ -134,9 +133,9 @@
         </div>
         <div id="countdown"></div> 
         <div id="difficulty">
-            Assistance <br/>
+            Assistance<br/>
             <form>
-                <input type="checkbox">
+                <input type="checkbox" id="checkbox" checked="checked" onclick="setDifficulty();">
             </form>
         </div>
 
