@@ -4,7 +4,7 @@ const strt = document.getElementById("start");
 const cntdwn = document.getElementById("countdown");
 const scoreDisplay = document.getElementById("score-display");
 const scoreOutput = document.getElementById("score-output");
-let board = document.getElementsByClassName('board')[0];
+const board = document.getElementsByClassName('board')[0];
 const settings = document.getElementById('settings');
 // let timeFormat = document.getElementById("time-format").value;
 
@@ -132,5 +132,26 @@ function clock(timeMode){
         }, 1000);
     }
 }
+ 
 
+var files = document.querySelectorAll(".file");
+var ranks = document.querySelectorAll(".rank");
+
+var f = files.length;
+var r = ranks.length;
+
+
+function setDifficulty(){
+    if(document.getElementById("checkbox").checked){
+        for(var i = 0; i < 8 ; i++){
+            files[i].style.visibility = 'visible';
+            ranks[i].style.visibility = 'visible';
+        }
+    }else {
+        for(var i = 0; i < 8 ; i++){
+            files[i].style.visibility = 'hidden';
+            ranks[i].style.visibility = 'hidden';
+        }
+    }
+}
 
