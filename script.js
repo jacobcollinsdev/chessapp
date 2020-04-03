@@ -52,11 +52,13 @@ function startTimer(count){
     }
 }
 
+
+/* Troubleshooting Function to display chosen time format
 function showTime(){
     var timeFormat = document.getElementById("time-format").value;
     console.log(timeFormat);
 }
-
+*/
 
 document.querySelectorAll('.square').forEach(item => {
     item.addEventListener('click', onClick);

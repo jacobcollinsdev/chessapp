@@ -131,6 +131,10 @@ input:hover {
 
 }
 
+#settings {
+    padding-left:15px;
+}
+
 #score-display {
     /* border: 1px solid black; */
     font-size:5em;
