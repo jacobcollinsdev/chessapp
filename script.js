@@ -5,9 +5,11 @@ const cntdwn = document.getElementById("countdown");
 const scoreDisplay = document.getElementById("score-display");
 const scoreOutput = document.getElementById("score-output");
 let board = document.getElementsByClassName('board')[0];
+// let timeFormat = document.getElementById("time-format").value;
 
 var score = 0;
 var tries = 0;
+
 //----------------------------------------------------------------
 
 //DEPOSIT ALL BOARD COORDINATES INTO A VARIABLE
@@ -25,10 +27,11 @@ function rndSq(set) {
 //INITIAL RANDOM COORDINATE FOR GAME START
 let randomSquare = rndSq(squareset);
 
-let gametime = 10; //Game length in seconds
-let gametimer; //Game timer
+let gametimer;
 
 function gameTime() {
+    var timeFormat = document.getElementById("time-format").value;
+    let gametime = timeFormat
     gametimer = setTimeout(function() {
         end();
     }, gametime * 1000);
@@ -43,15 +46,16 @@ function startTimer(count){
     scoreDisplay.innerHTML ='';
     if(count === 0) {
         startGame();
-        rst.style.visibility = "visible";    
     } else {
         target.innerText = count;
         setTimeout(function() {startTimer(--count);}, 1000);
     }
 }
 
-
-
+function showTime(){
+    var timeFormat = document.getElementById("time-format").value;
+    console.log(timeFormat);
+}
 
 
 document.querySelectorAll('.square').forEach(item => {
@@ -63,6 +67,9 @@ function startGame() {
     board.style.pointerEvents = 'all'; //To make the board active
     target.innerHTML = randomSquare; //First Target
     gameTime() //Start Game timer
+    var timeFormat = document.getElementById("time-format").value;
+    cntdwn.style.visibility = 'visible';
+    clock(timeFormat);
 };
 
 function onClick(event) {
@@ -112,7 +119,15 @@ document.getElementsByTagName("img")[0].addEventListener("click", ()=> {
     strt.style.visibility = "hidden";
 });
 
-//Reset Game Button
-// rst.addEventListener('click', event => {
-//     reset();
-// });
+function clock(timeMode){
+    if(timeMode === 0) {
+        return 
+    } else {
+        cntdwn.innerHTML = timeMode //time selected by user.
+        setTimeout(function() {
+            clock(--timeMode);
+        }, 1000);
+    }
+}
+
+
