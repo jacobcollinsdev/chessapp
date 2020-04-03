@@ -123,19 +123,26 @@
             </p>
         </div>
 
+        <div id="settings">Choose a time format:<br/>
+            <form>
+            <select id="time-format" onchange="showTime();">
+                <option value="10">Fast (10s)</option>
+                <option value="20">Standard (20s)</option>
+                <option value="30">Slow (30s)</option>
+            </select>
+            </form>
+        </div>
+        <div id="countdown"></div> 
+        <div id="difficulty">
+            Assistance <br/>
+            <form>
+                <input type="checkbox">
+            </form>
+        </div>
 
     </div>
 
-    <div id="settings">Choose a time format:<br/>
-        <form>
-        <select id="time-format" onchange="showTime();">
-            <option value="10">Fast (10s)</option>
-            <option value="20">Standard (20s)</option>
-            <option value="30">Slow (30s)</option>
-        </select>
-        </form>
-    </div>
-    <div id="countdown"></div>      
+     
 
     
     <script src="script.js"></script>
