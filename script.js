@@ -5,6 +5,7 @@ const cntdwn = document.getElementById("countdown");
 const scoreDisplay = document.getElementById("score-display");
 const scoreOutput = document.getElementById("score-output");
 let board = document.getElementsByClassName('board')[0];
+const settings = document.getElementById('settings');
 // let timeFormat = document.getElementById("time-format").value;
 
 var score = 0;
@@ -43,6 +44,7 @@ var count = 3;
 var timer;
 
 function startTimer(count){
+    settings.style.visibility = 'hidden';
     scoreDisplay.innerHTML ='';
     if(count === 0) {
         startGame();
@@ -65,7 +67,6 @@ document.querySelectorAll('.square').forEach(item => {
 })
 
 function startGame() {
-    
     board.style.pointerEvents = 'all'; //To make the board active
     target.innerHTML = randomSquare; //First Target
     gameTime() //Start Game timer
@@ -95,15 +96,15 @@ function onClick(event) {
 }
 
 
-
 //Reset Game
 function reset() {
     tries=0;
     score=0;
+    settings.style.visibility = 'visible';
     target.innerHTML = '';
     strt.style.visibility = "visible";
     cntdwn.style.visibility = 'hidden';
-    board.style.pointerEvents = 'none'; //To make board unresponsive on game finish
+    board.style.pointerEvents = 'none';
     scoreOutput.classList.remove('incorrect');
     scoreOutput.classList.remove('correct');
     scoreOutput.innerHTML = '';
