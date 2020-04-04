@@ -177,8 +177,12 @@ form {
     .content {
         display:inline-block;
     }
+
+    .board {
+        align-content: center;
+        justify-content: center;
+    }
     #stats {
-        width:100%;
         line-height: 1.6;
     }
     #score-display {
@@ -194,6 +198,10 @@ form {
     }
     #start {
         padding-bottom:20px;
-        margin:auto;
+        text-align: center;
+    }
+
+    #settings {
+        text-align: center;
     }
 }
