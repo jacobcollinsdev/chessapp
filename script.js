@@ -6,7 +6,6 @@ const scoreDisplay = document.getElementById("score-display");
 const scoreOutput = document.getElementById("score-output");
 const board = document.getElementsByClassName('board')[0];
 const settings = document.getElementById('settings');
-// let timeFormat = document.getElementById("time-format").value;
 
 var score = 0;
 var tries = 0;
@@ -20,12 +19,12 @@ document.querySelectorAll('.square').forEach(item => {
     squareset.push(item.id); //populates the squareset array with the id of each item
 })
 
-//GENERATE RANDOM COORDINATE
+//Generate Random Coordinate
 function rndSq(set) {
     return set[Math.floor(Math.random()* set.length)];
 }
 
-//INITIAL RANDOM COORDINATE FOR GAME START
+//Initial Random Coord for Game Start
 let randomSquare = rndSq(squareset);
 
 let gametimer;
@@ -38,7 +37,7 @@ function gameTime() {
     }, gametime * 1000);
 }
 
-//3-2-1 COUNTDOWN
+//3-2-1 Game Start Countdown
 
 var count = 3;
 var timer;
@@ -55,13 +54,6 @@ function startTimer(count){
 }
 
 
-/* Troubleshooting Function to display chosen time format
-function showTime(){
-    var timeFormat = document.getElementById("time-format").value;
-    console.log(timeFormat);
-}
-*/
-
 document.querySelectorAll('.square').forEach(item => {
     item.addEventListener('click', onClick);
 })
@@ -77,6 +69,7 @@ function startGame() {
 
 function onClick(event) {
     const item = event.target;
+    console.log(item.id); // <-- to show the clicked coord in console.
     if(item.id == randomSquare) {
         score++
         tries++
@@ -122,6 +115,8 @@ document.getElementsByTagName("img")[0].addEventListener("click", ()=> {
     strt.style.visibility = "hidden";
 });
 
+
+//Countdown Clock to display Game Time Remaining
 function clock(timeMode){
     if(timeMode === 0) {
         return 
@@ -134,6 +129,8 @@ function clock(timeMode){
 }
  
 
+
+//Assistance Setting
 var files = document.querySelectorAll(".file");
 var ranks = document.querySelectorAll(".rank");
 
