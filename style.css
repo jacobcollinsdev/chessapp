@@ -41,7 +41,7 @@ nav {
     position: relative;
     min-height:100vh;
     justify-content: center;
-    /* align-items: center; */
+    align-items: center;
     /* border: 3px solid pink; */
 }
 
