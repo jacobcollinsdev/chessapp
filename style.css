@@ -56,8 +56,8 @@ nav {
     padding-bottom: 10px;
     background: #eeeeee;
     border-radius: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
+    /* margin-left: 20px;
+    margin-right: 20px; */
     width:fit-content;
     box-shadow: 10px 10px 20px 3px #646464, 5px 5px 5px 1px #646464;
 }
@@ -71,8 +71,8 @@ nav {
 .board {
     /* border: 1px solid black; */
     display:grid;
-    justify-items: center;
-    align-items: center;
+    justify-self: center;
+    align-self: center;
     grid-template-columns: repeat(8, 70px);
     grid-template-rows: repeat(8, 70px);
     font-size:20px;
@@ -106,7 +106,7 @@ nav {
     pointer-events: none;
 }
 
-.lightSquare {
+.lSq {
     width:70px;
     height:70px;
     background-color: #f3f3f3;
@@ -114,7 +114,7 @@ nav {
     color:#440000;
 }
 
-.darkSquare {
+.dSq {
     width:70px;
     height:70px;
     background-color: #440000;
@@ -123,7 +123,8 @@ nav {
 }
 
 .square:hover {
-    opacity: 0.8;
+    opacity: 0.3;
+    background-color:#c7a341;
 }
 
 .file {
@@ -167,6 +168,7 @@ nav {
     margin-right: 40px;
     text-align: justify;
     align-self: center;
+    justify-self: center;
 }
 
 /*SETTINGS PANEL AND COUNTDOWN CLOCK*/
@@ -203,7 +205,7 @@ nav {
 .custom-select select {
     background: #f3f3f3;
     padding:10px;
-    width:130px;
+    width:160px;
     border:none;
     border-radius: 8px;
     font-size: 0.7em;
@@ -260,6 +262,7 @@ footer {
     .board {
         align-content: center;
         justify-content: center;
+        border: 0px;
     }
     #stats {
         line-height: 1.6;
