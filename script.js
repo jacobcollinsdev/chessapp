@@ -12,8 +12,8 @@ var tries = 0;
 
 //----------------------------------------------------------------
 
-//DEPOSIT ALL BOARD COORDINATES INTO A VARIABLE
-let squareset = []; //creates an empty array called squareset.
+//To deposit all board coordinates into an array
+let squareset = []; 
 
 document.querySelectorAll('.square').forEach(item => {
     squareset.push(item.id); //populates the squareset array with the id of each item
@@ -53,6 +53,12 @@ function startTimer(count){
     }
 }
 
+//Start Game Button
+document.getElementsByTagName("img")[0].addEventListener("click", ()=> {
+    stats.style.visibility = "hidden";
+    strt.style.visibility = "hidden";
+    play();
+});
 
 document.querySelectorAll('.square').forEach(item => {
     item.addEventListener('click', onClick);
@@ -109,15 +115,11 @@ function end() {
     reset();
 }
 
-//Start Game Button
-document.getElementsByTagName("img")[0].addEventListener("click", ()=> {
-    stats.style.visibility = "hidden";
-    strt.style.visibility = "hidden";
-});
-
-
 //Countdown Clock to display Game Time Remaining
 function clock(timeMode){
+    if(timeMode ===3){
+        outro();
+    }
     if(timeMode === 0) {
         return 
     } else {
@@ -152,3 +154,13 @@ function setDifficulty(){
     }
 }
 
+//Audio Effects
+function play(){
+    var audio = new Audio('audio/Count-Down.mp3');
+    audio.play();
+};
+
+function outro(){
+    var audio = new Audio('audio/Count-Out.mp3');
+    audio.play();
+};
