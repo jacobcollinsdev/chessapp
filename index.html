@@ -22,10 +22,13 @@
         <div class="content">
 
 
+
+
             <div id="start">
                 <!--CHANGE "START" IMAGE ON MOUSEOVER/MOUSEOUT-->
                 <img src="images/start-default.png" onmouseover="this.src='images/start-hover.png';" onmouseout="src='images/start-default.png';" onclick="startTimer(3);"/>
             </div>
+
 
 
             <div class="board">
@@ -104,8 +107,11 @@
                 <div class="square lSq" id="h1"><div class="file">h</div></div>
             </div>
 
-            <div id="score-display"></div>
+
+
             <div id="score-output"></div>
+
+
 
             <div id="stats">
                 <h2>Welcome to the Chess Coordinate Trainer</h2>
@@ -128,8 +134,12 @@
                 </p>
             </div>
         </div>
+
+
+
+
         <div class="settings-panel">
-            <div id="settings">Time format:<br/>
+            <div id="settings">Time format<br/>
                 <div class="custom-select">
                         <select id="time-format">
                             <option value="10">Fast (10s)</option>
@@ -141,12 +151,19 @@
             <div id="countdown"></div> 
             <div id="difficulty">
                 Assistance<br/>
-                <form>
+                <label class="switch">
                     <input type="checkbox" id="checkbox" checked="checked" onclick="setDifficulty();">
-                </form>
+                    <span class="slider round"></span>
+                </label>
             </div>
         </div>
+
+
+
         <footer>Jacob Collins &copy; 2020 </footer>
+
+
+
     </div>    
 
 
