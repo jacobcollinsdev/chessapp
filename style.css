@@ -45,10 +45,11 @@ nav {
     /* border: 3px solid pink; */
 }
 
-/*START, BOARD, AND WELCOME MESSAGE STYLES*/
+/*S T A R T,  B O A R D,  &  W E L C O M E  M E S S A G E*/
 
 .content {
     display:grid;
+    position:relative;
     align-content: center;
     justify-items: center;
     grid-template-columns: 1fr 1fr 1fr;
@@ -56,9 +57,9 @@ nav {
     padding-bottom: 10px;
     background: #eeeeee;
     border-radius: 20px;
-    /* margin-left: 20px;
-    margin-right: 20px; */
-    width:fit-content;
+    margin-left: 20px;
+    margin-right: 20px;
+    /* width:fit-content; */
     box-shadow: 10px 10px 20px 3px #646464, 5px 5px 5px 1px #646464;
 }
 
@@ -138,27 +139,24 @@ nav {
     pointer-events: none;
 }
 
-#score-display {
-    /* border: 1px solid black; */
-    font-size:5em;
-    text-align:center;
-    position: absolute;
-    width:24%;
-    top:40%;
-    left:85%;
-    transform: translate(-50%, -50%);
-}
 
 #score-output {
     font-size:5em;
-    width:100px;
     position:absolute;
     border-radius: 50%;
     text-align: center;
     align-items:center;
     left:85%;
-    top:40%;
+    top:50%;
     transform: translate(-50%, -50%);
+}
+
+.score-output-width {
+    width:25%;
+}
+
+.score-border{
+    width:100px;
 }
 
 #stats {
@@ -171,7 +169,7 @@ nav {
     justify-self: center;
 }
 
-/*SETTINGS PANEL AND COUNTDOWN CLOCK*/
+/*S E T T I N G S   P A N E L   &   C O U N T D O W N   C L O C K*/
 
 .settings-panel {
     background:#a8a8a8;
@@ -221,17 +219,72 @@ nav {
     visibility: hidden;
 }
 
-#difficulty {
+#difficulty{
     text-align: center;
     font-size: 1.5em;
 }
 
-form input {
-    width:40px;
+/*Switch Styling*/
+
+/*The box around the slider*/
+.switch {
+    position:relative;
+    display:inline-block;
+    width:80px;
     height:40px;
+}
+
+/*Hide default HTML checkbox*/
+.switch input {
+    opacity: 0;
+    width:0;
+    height:0;
     box-shadow: 3px 3px 7px rgba(0,0,0,0.5);
 }
 
+/*The slider inside the switch*/
+.slider {
+    position:absolute;
+    cursor: pointer;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:#eeeeee;
+    -webkit-transition:0.4s;
+    transition:0.4s;
+    border-radius: 20px;
+    box-shadow: 3px 3px 2px #424242;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 6px;
+    background-color: #440000;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #440000;
+}
+
+input:checked + .slider::before {
+    background-color: #eeeeee;
+}
+  
+input:checked + .slider:before {
+    -webkit-transform: translateX(40px);
+    -ms-transform: translateX(40px);
+    transform: translateX(40px);
+}
+
+/*footer styles*/
 footer {
     background:black;
     color:white;
@@ -285,5 +338,11 @@ footer {
 
     #settings {
         text-align: center;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    .content {
+        width: 1400px;
     }
 }
