@@ -2,7 +2,6 @@ const target = document.getElementById("target");
 const stats = document.getElementById("stats");
 const strt = document.getElementById("start");
 const cntdwn = document.getElementById("countdown");
-const scoreDisplay = document.getElementById("score-display");
 const scoreOutput = document.getElementById("score-output");
 const board = document.getElementsByClassName('board')[0];
 const settings = document.getElementById('settings');
@@ -37,6 +36,7 @@ function gameTime() {
     }, gametime * 1000);
 }
 
+
 //3-2-1 Game Start Countdown
 
 var count = 3;
@@ -44,7 +44,6 @@ var timer;
 
 function startTimer(count){
     settings.style.visibility = 'hidden';
-    scoreDisplay.innerHTML ='';
     if(count === 0) {
         startGame();
     } else {
@@ -57,6 +56,7 @@ function startTimer(count){
 document.getElementsByTagName("img")[0].addEventListener("click", ()=> {
     stats.style.visibility = "hidden";
     strt.style.visibility = "hidden";
+    scoreOutput.innerHTML = "";
     play();
 });
 
@@ -65,6 +65,7 @@ document.querySelectorAll('.square').forEach(item => {
 })
 
 function startGame() {
+    scoreOutput.classList.add('score-border');
     board.style.pointerEvents = 'all'; //To make the board active
     target.innerHTML = randomSquare; //First Target
     gameTime() //Start Game timer
@@ -106,12 +107,14 @@ function reset() {
     board.style.pointerEvents = 'none';
     scoreOutput.classList.remove('incorrect');
     scoreOutput.classList.remove('correct');
-    scoreOutput.innerHTML = '';
+    // scoreOutput.innerHTML = '';
 }
 
 //End Game
 function end() {
-    scoreDisplay.innerHTML = "Time's Up! You scored " + score + " points!"
+    scoreOutput.classList.remove('score-border');
+    scoreOutput.classList.add('score-output-width');
+    scoreOutput.innerHTML = "Time's Up! You scored " + score + " points!"
     reset();
 }
 
@@ -157,10 +160,12 @@ function setDifficulty(){
 //Audio Effects
 function play(){
     var audio = new Audio('audio/Count-Down.mp3');
+    audio.preload = "auto";
     audio.play();
 };
 
 function outro(){
     var audio = new Audio('audio/Count-Out.mp3');
+    audio.preload = "auto";
     audio.play();
 };
