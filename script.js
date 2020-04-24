@@ -9,6 +9,15 @@ const settings = document.getElementById('settings');
 var score = 0;
 var tries = 0;
 
+var startContent = "<h2>Welcome to the Chess Coordinate Trainer</h2>"
+startContent += "<p>The concept is simple.</p>"
+startContent += "<p>Once you have clicked \"Start\", a random co-ordinate relating to a square on the chess board will be generated.</p>"
+startContent += "<p>Click the corresponding square, and try to score as many points as you can before you run out of time.</p>"
+startContent += "<p>The goal is to be fast <em>and</em> accurate.</p><p>Good luck!</p>"
+
+
+stats.innerHTML = startContent;
+
 //----------------------------------------------------------------
 
 //To deposit all board coordinates into an array
@@ -54,9 +63,8 @@ function startTimer(count){
 
 //Start Game Button
 document.getElementsByTagName("img")[0].addEventListener("click", ()=> {
-    stats.style.visibility = "hidden";
     strt.style.visibility = "hidden";
-    scoreOutput.innerHTML = "";
+    stats.innerHTML = "";
     play();
 });
 
@@ -65,7 +73,6 @@ document.querySelectorAll('.square').forEach(item => {
 })
 
 function startGame() {
-    scoreOutput.classList.add('score-border');
     board.style.pointerEvents = 'all'; //To make the board active
     target.innerHTML = randomSquare; //First Target
     gameTime() //Start Game timer
@@ -80,18 +87,18 @@ function onClick(event) {
     if(item.id == randomSquare) {
         score++
         tries++
-        scoreOutput.innerHTML = score;
+        stats.innerHTML = score;
         randomSquare = rndSq(squareset);
         target.innerHTML = randomSquare;
-        scoreOutput.classList.add('correct');
-        scoreOutput.classList.remove('incorrect');
+        stats.classList.add('correct');
+        stats.classList.remove('incorrect');
     } else {
         tries++;
-        scoreOutput.innerHTML = score;
+        stats.innerHTML = score;
         randomSquare = rndSq(squareset);
         target.innerHTML = randomSquare;
-        scoreOutput.classList.remove('correct');
-        scoreOutput.classList.add('incorrect');
+        stats.classList.remove('correct');
+        stats.classList.add('incorrect');
     };
 }
 
@@ -105,16 +112,15 @@ function reset() {
     strt.style.visibility = "visible";
     cntdwn.style.visibility = 'hidden';
     board.style.pointerEvents = 'none';
-    scoreOutput.classList.remove('incorrect');
-    scoreOutput.classList.remove('correct');
-    // scoreOutput.innerHTML = '';
+    stats.classList.remove('incorrect');
+    stats.classList.remove('correct');
+
 }
 
 //End Game
 function end() {
-    scoreOutput.classList.remove('score-border');
-    scoreOutput.classList.add('score-output-width');
-    scoreOutput.innerHTML = "Time's Up! You scored " + score + " points!"
+    stats.classList.add('score-output');
+    stats.innerHTML = "Time's Up! You scored " + score + " points!"
     reset();
 }
 
