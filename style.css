@@ -140,19 +140,12 @@ nav {
 }
 
 
-#score-output {
+.score-output {
     font-size:5em;
-    position:absolute;
-    border-radius: 50%;
-    text-align: center;
-    align-items:center;
-    left:85%;
-    top:50%;
-    transform: translate(-50%, -50%);
-}
-
-.score-output-width {
-    width:25%;
+    /* border-radius: 50%; */
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .score-border{
@@ -160,15 +153,37 @@ nav {
 }
 
 #stats {
-    /* border: 1px solid black; */
-    position:relative;
+    /* position:relative; */
     margin-left: 40px;
     margin-right: 40px;
-    text-align: justify;
-    align-self: center;
-    justify-self: center;
+    text-align: center;
+    /* align-items: center;
+    justify-content: center; */
 }
 
+.correct {
+    border:6px solid green;
+    height:100px;
+    width:100px; 
+    font-size:5em;
+    border-radius: 50%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.incorrect {
+    border:6px solid red;
+    height:100px;
+    width:100px;
+    font-size:5em;
+    border-radius: 50%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 /*S E T T I N G S   P A N E L   &   C O U N T D O W N   C L O C K*/
 
 .settings-panel {
@@ -295,21 +310,13 @@ footer {
     text-align: center;
 }
 
-.correct {
-    border:6px solid green;
-    border-radius: 50%;
-}
-
-.incorrect {
-    border:6px solid red;
-    border-radius: 50%;
-}
-
-
 /* on screens that are 1000px or less, do this... */
 @media screen and (max-width:1000px) {
     .content {
-        display:inline-block;
+        display:flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content:center;
     }
 
     .board {
@@ -320,17 +327,7 @@ footer {
     #stats {
         line-height: 1.6;
     }
-    #score-display {
-        display: block;
-        position: static;
-        margin:auto;
-    }
-
-    #score-output {
-        display:block;
-        position:static;
-        margin:auto;
-    }
+    
     #start {
         padding-bottom:20px;
         text-align: center;
@@ -338,6 +335,14 @@ footer {
 
     #settings {
         text-align: center;
+    }
+
+    .correct {
+        margin-top: 0.5em;
+    }
+    
+    .incorrect {
+        margin-top: 0.5em;
     }
 }
 
