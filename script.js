@@ -9,16 +9,28 @@ const settings = document.getElementById('settings');
 var score = 0;
 var tries = 0;
 
+//Audio Effects
+function play(){
+    var audio = new Audio('audio/Count-Down.mp3');
+    audio.preload = "auto";
+    audio.play();
+};
+
+function outro(){
+    var audio = new Audio('audio/Count-Out.mp3');
+    audio.preload = "auto";
+    audio.play();
+};
+
+// Welcome Message
 var startContent = "<h2>Welcome to the Chess Coordinate Trainer</h2>"
 startContent += "<p>The concept is simple.</p>"
-startContent += "<p>Once you have clicked \"Start\", a random co-ordinate relating to a square on the chess board will be generated.</p>"
+startContent += "<p>Once you have clicked &quot;Start&quot;, a random co-ordinate relating to a square on the chess board will be generated.</p>"
 startContent += "<p>Click the corresponding square, and try to score as many points as you can before you run out of time.</p>"
 startContent += "<p>The goal is to be fast <em>and</em> accurate.</p><p>Good luck!</p>"
 
-
 stats.innerHTML = startContent;
 
-//----------------------------------------------------------------
 
 //To deposit all board coordinates into an array
 let squareset = []; 
@@ -35,6 +47,8 @@ function rndSq(set) {
 //Initial Random Coord for Game Start
 let randomSquare = rndSq(squareset);
 
+
+//Game Time Length Display
 let gametimer;
 
 function gameTime() {
@@ -47,7 +61,6 @@ function gameTime() {
 
 
 //3-2-1 Game Start Countdown
-
 var count = 3;
 var timer;
 
@@ -83,7 +96,7 @@ function startGame() {
 
 function onClick(event) {
     const item = event.target;
-    console.log(item.id); // <-- to show the clicked coord in console.
+    console.log(item.id); // to show the clicked coord in console (for troubleshooting)
     if(item.id == randomSquare) {
         score++
         tries++
@@ -102,6 +115,12 @@ function onClick(event) {
     };
 }
 
+//End Game
+function end() {
+    stats.classList.add('score-output');
+    stats.innerHTML = "Time's Up! You scored " + score + " points!"
+    reset();
+}
 
 //Reset Game
 function reset() {
@@ -115,13 +134,6 @@ function reset() {
     stats.classList.remove('incorrect');
     stats.classList.remove('correct');
 
-}
-
-//End Game
-function end() {
-    stats.classList.add('score-output');
-    stats.innerHTML = "Time's Up! You scored " + score + " points!"
-    reset();
 }
 
 //Countdown Clock to display Game Time Remaining
@@ -138,7 +150,6 @@ function clock(timeMode){
         }, 1000);
     }
 }
- 
 
 
 //Assistance Setting
@@ -148,7 +159,7 @@ var ranks = document.querySelectorAll(".rank");
 var f = files.length;
 var r = ranks.length;
 
-
+//Choose Game Time Length
 function setDifficulty(){
     if(document.getElementById("checkbox").checked){
         for(var i = 0; i < 8 ; i++){
@@ -162,16 +173,3 @@ function setDifficulty(){
         }
     }
 }
-
-//Audio Effects
-function play(){
-    var audio = new Audio('audio/Count-Down.mp3');
-    audio.preload = "auto";
-    audio.play();
-};
-
-function outro(){
-    var audio = new Audio('audio/Count-Out.mp3');
-    audio.preload = "auto";
-    audio.play();
-};

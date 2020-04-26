@@ -45,7 +45,7 @@ nav {
     /* border: 3px solid pink; */
 }
 
-/*S T A R T,  B O A R D,  &  W E L C O M E  M E S S A G E*/
+/*START BUTTON, BOARD, & WELCOME MESSAGE*/
 
 .content {
     display:grid;
@@ -59,18 +59,15 @@ nav {
     border-radius: 20px;
     margin-left: 20px;
     margin-right: 20px;
-    /* width:fit-content; */
     box-shadow: 10px 10px 20px 3px #646464, 5px 5px 5px 1px #646464;
 }
 
 #start {
-    /* border: 1px solid black; */
     justify-self: center;
     align-self: center;
 }
 
 .board {
-    /* border: 1px solid black; */
     display:grid;
     justify-self: center;
     align-self: center;
@@ -142,15 +139,11 @@ nav {
 
 .score-output {
     font-size:5em;
-    /* border-radius: 50%; */
     display:flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.score-border{
-    width:100px;
-}
 
 #stats {
     /* position:relative; */
@@ -184,6 +177,7 @@ nav {
     align-items: center;
     justify-content: center;
 }
+
 /*S E T T I N G S   P A N E L   &   C O U N T D O W N   C L O C K*/
 
 .settings-panel {
