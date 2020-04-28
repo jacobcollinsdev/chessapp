@@ -117,6 +117,8 @@ function onClick(event) {
 
 //End Game
 function end() {
+    stats.classList.remove('incorrect');
+    stats.classList.remove('correct');
     stats.classList.add('score-output');
     stats.innerHTML = "Time's Up! You scored " + score + " points!"
     reset();
@@ -131,8 +133,7 @@ function reset() {
     strt.style.visibility = "visible";
     cntdwn.style.visibility = 'hidden';
     board.style.pointerEvents = 'none';
-    stats.classList.remove('incorrect');
-    stats.classList.remove('correct');
+
 
 }
 
