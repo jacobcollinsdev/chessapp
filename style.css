@@ -53,6 +53,21 @@ nav {
 
 /*START BUTTON, BOARD, & WELCOME MESSAGE*/
 
+#go{
+    background:#a8a8a8;
+    color:white;
+    font-size: 4rem;
+    padding:1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 900;
+    box-shadow: 5px 5px 20px #646464;
+}
+
+#go:hover{
+    color:#e0ac1c;
+}
+
 .content {
     display:grid;
     position:relative;
@@ -154,8 +169,8 @@ nav {
 
 #stats {
     /* position:relative; */
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-left: 1rem;
+    margin-right: 1rem;
     text-align: center;
 }
 
@@ -311,8 +326,21 @@ footer {
 
 /* on screens that are 600px or less, do this... */
 @media screen and (max-width:600px){
-    img {
-        height:100px;
+
+    nav{
+        font-size: 1rem;
+    }
+    #go{
+        font-size: 1.5rem;
+        padding:1rem;
+    }
+
+    h2{
+        font-size: 1.5rem;
+    }
+
+    p{
+        font-size: 1rem;
     }
 
     .board{
@@ -387,19 +415,26 @@ footer {
         font-size:1em;
     }
 
+    .score-output{
+        font-size: 2em;
+        margin:1rem;
+    }
+
 }
 
 /* on screens that are 1000px or less, do this... */
 @media screen and (max-width:1000px) {
+    h2, p {
+        display:none;
+    }
+    #go{
+        font-size:2rem;
+    }
 
     .board {
         align-content: center;
         justify-content: center;
         border: 0px;
-    }
-
-    .score-output{
-        font-size: 2em;
     }
 
     #stats {
@@ -426,6 +461,9 @@ footer {
 }
 
 @media screen and (max-width:1250px){
+    #go{
+        margin: 1rem;
+    }
     .content {
         display:flex;
         flex-direction:column;

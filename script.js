@@ -1,10 +1,11 @@
 const target = document.getElementById("target");
 const stats = document.getElementById("stats");
-const strt = document.getElementById("start");
+const go = document.getElementById("go");
 const cntdwn = document.getElementById("countdown");
 const scoreOutput = document.getElementById("score-output");
 const board = document.getElementsByClassName('board')[0];
 const settings = document.getElementById('settings');
+
 
 var score = 0;
 var tries = 0;
@@ -24,7 +25,6 @@ function outro(){
 
 // Welcome Message
 var startContent = "<h2>Welcome to the Chess Coordinate Trainer</h2>"
-startContent += "<p>The concept is simple.</p>"
 startContent += "<p>Once you have clicked &quot;Start&quot;, a random co-ordinate relating to a square on the chess board will be generated.</p>"
 startContent += "<p>Click the corresponding square, and try to score as many points as you can before you run out of time.</p>"
 startContent += "<p>The goal is to be fast <em>and</em> accurate.</p><p>Good luck!</p>"
@@ -59,7 +59,6 @@ function gameTime() {
     }, gametime * 1000);
 }
 
-
 //3-2-1 Game Start Countdown
 var count = 3;
 var timer;
@@ -75,10 +74,11 @@ function startTimer(count){
 }
 
 //Start Game Button
-document.getElementsByTagName("img")[0].addEventListener("click", ()=> {
-    strt.style.visibility = "hidden";
+go.addEventListener("click", ()=> {
+    go.style.visibility = "hidden";
     stats.innerHTML = "";
     play();
+    startTimer(3);
 });
 
 document.querySelectorAll('.square').forEach(item => {
@@ -130,7 +130,7 @@ function reset() {
     score=0;
     settings.style.visibility = 'visible';
     target.innerHTML = '';
-    strt.style.visibility = "visible";
+    go.style.visibility = "visible";
     cntdwn.style.visibility = 'hidden';
     board.style.pointerEvents = 'none';
 
