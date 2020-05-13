@@ -2,7 +2,6 @@ const target = document.getElementById("target");
 const stats = document.getElementById("stats");
 const go = document.getElementById("go");
 const cntdwn = document.getElementById("countdown");
-const scoreOutput = document.getElementById("score-output");
 const board = document.getElementsByClassName('board')[0];
 const settings = document.getElementById('settings');
 
